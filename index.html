@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator Pro</title>
+    <meta name="description" content="A comprehensive percentage and tax calculator with multiple calculation modes, GST calculator, and more.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="light-mode">
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <h1><i class="fas fa-calculator"></i> Percentage Calculator Pro</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Calculators</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h2 class="page-title">Percentage Calculators</h2>
+        
+        <div class="calculator-tabs">
+            <button class="tab-btn active" data-tab="percentage-calculators">Percentage Calculators</button>
+            <button class="tab-btn" data-tab="gst-calculator">GST Calculator</button>
+            <button class="tab-btn" data-tab="profit-loss-calculator">Profit & Loss</button>
+        </div>
+        
+        <!-- Combined Percentage Calculators Section -->
+        <div class="calculator-card tab-content active" id="percentage-calculators-tab">
+            <!-- Basic Percentage Calculator Section -->
+            <div id="basic-section" class="calculator-section">
+                <h3>Basic Percentage Calculator</h3>
+                <div class="input-group">
+                    <label for="percentage">Percentage (%)</label>
+                    <div class="input-with-tooltip">
+                        <input type="text" id="percentage" placeholder="Enter percentage value">
+                        <div class="tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="tooltip-text">Enter the percentage value (e.g., 25 for 25%)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="baseNumber">Of Number</label>
+                    <div class="input-with-tooltip">
+                        <input type="text" id="baseNumber" placeholder="Enter base number">
+                        <div class="tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="tooltip-text">Enter the number you want to find the percentage of</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="result">Result</label>
+                    <div class="input-with-tooltip">
+                        <input type="text" id="result" placeholder="Result will appear here" class="result-field">
+                        <div class="tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="tooltip-text">The calculated result based on other inputs</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="summary" id="calculation-summary">
+                    <!-- Summary will appear here -->
+                </div>
+                
+                <div class="error-message" id="error-message"></div>
+                
+                <div class="button-group">
+                    <button id="reset-btn" class="reset-btn">Reset</button>
+                    <button id="copy-btn" class="copy-btn"><i class="fas fa-copy"></i> Copy Results</button>
+                </div>
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <!-- Find Percentage Section -->
+            <div id="find-percentage-section" class="calculator-section">
+                <h3>Find Percentage</h3>
+                <div class="input-group">
+                    <label for="find-percentage-x">X (Value)</label>
+                    <div class="input-with-tooltip">
+                        <input type="text" id="find-percentage-x" placeholder="Enter value X">
+                        <div class="tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="tooltip-text">Enter the value you want to find the percentage of</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="find-percentage-y">Y (Result)</label>
+                    <div class="input-with-tooltip">
+                        <input type="text" id="find-percentage-y" placeholder="Enter result value Y">
+                        <div class="tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="tooltip-text">Enter the resulting value after applying the percentage</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="find-percentage-result">Percentage (%)</label>
+                    <div class="input-with-tooltip">
+                        <input type="text" id="find-percentage-result" placeholder="Percentage will appear here" class="result-field">
+                        <div class="tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="tooltip-text">The calculated percentage</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="summary" id="find-percentage-summary">
+                    <!-- Summary will appear here -->
+                </div>
+                
+                <div class="error-message" id="find-percentage-error"></div>
+                
+                <div class="button-group">
+                    <button id="find-percentage-reset-btn" class="reset-btn">Reset</button>
+                    <button id="find-percentage-copy-btn" class="copy-btn"><i class="fas fa-copy"></i> Copy Results</button>
+                </div>
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <!-- Percentage Change Section -->
+            <div id="percentage-change-section" class="calculator-section">
+                <h3>Percentage Change</h3>
+                <div class="input-group">
+                    <label for="percentage-change-old">Original Value</label>
+                    <div class="input-with-tooltip">
+                        <input type="text" id="percentage-change-old" placeholder="Enter original value">
+                        <div class="tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="tooltip-text">Enter the original value before the change</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="percentage-change-new">New Value</label>
+                    <div class="input-with-tooltip">
+                        <input type="text" id="percentage-change-new" placeholder="Enter new value">
+                        <div class="tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="tooltip-text">Enter the new value after the change</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="percentage-change-result">Percentage Change (%)</label>
+                    <div class="input-with-tooltip">
+                        <input type="text" id="percentage-change-result" placeholder="Percentage change will appear here" class="result-field">
+                        <div class="tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="tooltip-text">The calculated percentage change</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="summary" id="percentage-change-summary">
+                    <!-- Summary will appear here -->
+                </div>
+                
+                <div class="error-message" id="percentage-change-error"></div>
+                
+                <div class="button-group">
+                    <button id="percentage-change-reset-btn" class="reset-btn">Reset</button>
+                    <button id="percentage-change-copy-btn" class="copy-btn"><i class="fas fa-copy"></i> Copy Results</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Profit and Loss Calculator Section -->
+        <div class="calculator-card tab-content" id="profit-loss-calculator-tab">
+            <h2>Profit and Loss Calculator</h2>
+            
+            <div class="input-group">
+                <label for="cost-price">Cost Price (₹)</label>
+                <div class="input-with-tooltip">
+                    <input type="text" id="cost-price" placeholder="Enter cost price">
+                    <div class="tooltip">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="tooltip-text">Enter the price at which you purchased the item</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="selling-price">Selling Price (₹)</label>
+                <div class="input-with-tooltip">
+                    <input type="text" id="selling-price" placeholder="Enter selling price">
+                    <div class="tooltip">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="tooltip-text">Enter the price at which you sold the item</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="quantity">Quantity</label>
+                <div class="input-with-tooltip">
+                    <input type="text" id="quantity" placeholder="Enter quantity" value="1">
+                    <div class="tooltip">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="tooltip-text">Enter the number of items (default: 1)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Results Container -->
+            <div class="pl-results-container" id="pl-results">
+                <div class="pl-result-type" id="pl-result-type">Enter values to see results</div>
+                <div class="result-row">
+                    <div class="result-label">Amount (₹):</div>
+                    <div class="result-value" id="pl-amount">0.00</div>
+                </div>
+                <div class="result-row">
+                    <div class="result-label">Percentage (%):</div>
+                    <div class="result-value" id="pl-percentage">0.00</div>
+                </div>
+                <div class="result-row">
+                    <div class="result-label">Total Amount (₹):</div>
+                    <div class="result-value" id="pl-total-amount">0.00</div>
+                </div>
+            </div>
+            
+            <div class="summary" id="pl-summary">
+                <!-- Summary will appear here -->
+            </div>
+            
+            <div class="error-message" id="pl-error"></div>
+            
+            <div class="button-group">
+                <button id="pl-reset-btn" class="reset-btn">Reset</button>
+                <button id="pl-copy-btn" class="copy-btn"><i class="fas fa-copy"></i> Copy Results</button>
+            </div>
+        </div>
+            
+        <!-- GST Calculator Section -->
+        <div class="calculator-card tab-content" id="gst-calculator-tab">
+            <h2>GST Calculator</h2>
+            
+            <div class="input-group">
+                <label for="gst-amount">Original Amount (₹)</label>
+                <div class="input-with-tooltip">
+                    <input type="text" id="gst-amount" placeholder="Enter amount">
+                    <div class="tooltip">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="tooltip-text">Enter the original amount without GST</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="gst-rate">GST Rate (%)</label>
+                <div class="input-with-tooltip">
+                    <select id="gst-rate">
+                        <option value="5">5%</option>
+                        <option value="12">12%</option>
+                        <option value="18" selected>18%</option>
+                        <option value="28">28%</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                    <div class="tooltip">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="tooltip-text">Select the GST rate applicable</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="input-group hidden" id="custom-gst-rate-group">
+                <label for="custom-gst-rate">Custom GST Rate (%)</label>
+                <div class="input-with-tooltip">
+                    <input type="text" id="custom-gst-rate" placeholder="Enter custom GST rate">
+                    <div class="tooltip">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="tooltip-text">Enter a custom GST rate percentage</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gst-toggle">
+                <label class="toggle-label">
+                    <input type="radio" name="gst-toggle" id="include-gst" checked>
+                    <span>Include GST (Add to amount)</span>
+                </label>
+                <label class="toggle-label">
+                    <input type="radio" name="gst-toggle" id="exclude-gst">
+                    <span>Extract GST (GST included in amount)</span>
+                </label>
+            </div>
+            
+            <!-- Results for Include GST mode -->
+            <div class="results-container" id="include-gst-results">
+                <div class="result-row">
+                    <div class="result-label">GST Amount (₹):</div>
+                    <div class="result-value" id="gst-tax-amount">0.00</div>
+                </div>
+                <div class="result-row">
+                    <div class="result-label">Final Amount (₹):</div>
+                    <div class="result-value" id="gst-final-amount">0.00</div>
+                </div>
+            </div>
+            
+            <!-- Results for Extract GST mode -->
+            <div class="results-container hidden" id="extract-gst-results">
+                <div class="result-row">
+                    <div class="result-label">GST Amount (₹):</div>
+                    <div class="result-value" id="gst-tax-amount-extract">0.00</div>
+                </div>
+                <div class="result-row">
+                    <div class="result-label">Base Amount (₹):</div>
+                    <div class="result-value" id="gst-base-amount">0.00</div>
+                </div>
+            </div>
+            
+            <div class="summary" id="gst-summary">
+                <!-- Summary will appear here -->
+            </div>
+            
+            <div class="error-message" id="gst-error"></div>
+            
+            <div class="button-group">
+                <button id="gst-reset-btn" class="reset-btn">Reset</button>
+                <button id="gst-copy-btn" class="copy-btn"><i class="fas fa-copy"></i> Copy Results</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Percentage Calculator Pro</h3>
+                <p>A comprehensive percentage calculator tool with multiple calculation modes. Free, fast, and easy to use.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Calculators</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Calculator Tools</h3>
+                <ul>
+                    <li><a href="#" data-tab="percentage-calculators" class="footer-tab-link">Percentage Calculators</a></li>
+                    <li><a href="#" data-tab="gst-calculator" class="footer-tab-link">GST Calculator</a></li>
+                    <li><a href="#" data-tab="profit-loss-calculator" class="footer-tab-link">Profit & Loss</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Percentage Calculator Pro by Nilay Raj. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

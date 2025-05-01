@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Percentage Calculator Pro</title>
+    <meta name="description" content="Contact the team behind Percentage Calculator Pro with your questions, feedback, or suggestions.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="light-mode">
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <h1><i class="fas fa-calculator"></i> Percentage Calculator Pro</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Calculators</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h2 class="page-title">Contact Us</h2>
+        
+        <div class="contact-section">
+            <div class="contact-info">
+                <p>Have a question or feedback about our calculator? We'd love to hear from you! Fill out the form below and we'll get back to you as soon as possible.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <h4>Email</h4>
+                        <p>support@percentagecalcpro.com</p>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon"><i class="fas fa-comment-alt"></i></div>
+                        <h4>Live Chat</h4>
+                        <p>Available Monday-Friday<br>9am to 5pm IST</p>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon"><i class="fas fa-question-circle"></i></div>
+                        <h4>Help Center</h4>
+                        <p>Find answers to common questions</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-container">
+                <h3>Send Us a Message</h3>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your email address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Question</option>
+                            <option value="suggestion">Suggestion</option>
+                            <option value="bug">Report a Bug</option>
+                            <option value="feature">Feature Request</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+                
+                <div id="form-message" class="form-message hidden"></div>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h3>Frequently Asked Questions</h3>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>Is Percentage Calculator Pro free to use?</h4>
+                    <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, Percentage Calculator Pro is completely free to use. There are no subscriptions, hidden fees, or premium features requiring payment.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>How accurate are the calculations?</h4>
+                    <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>Our calculator provides precise results to two decimal places for most calculations. We use standard mathematical formulas to ensure accuracy in all calculations.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>Can I use Percentage Calculator Pro on my mobile device?</h4>
+                    <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, our calculator is fully responsive and works on smartphones, tablets, and desktop computers. It's designed to provide a great experience regardless of your device.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>How do I report a bug or suggest a new feature?</h4>
+                    <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>You can use the contact form on this page to report bugs or suggest features. Select the appropriate subject in the dropdown menu, and we'll review your feedback promptly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Percentage Calculator Pro</h3>
+                <p>A comprehensive percentage calculator tool with multiple calculation modes. Free, fast, and easy to use.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Calculators</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Calculator Tools</h3>
+                <ul>
+                    <li><a href="index.html#percentage-calculators">Percentage Calculators</a></li>
+                    <li><a href="index.html#gst-calculator">GST Calculator</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Percentage Calculator Pro by Nilay Raj. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script>
+        // Contact form submission handler
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real application, you would send the form data to a server here
+            // For this demo, we'll just show a success message
+            
+            const formMessage = document.getElementById('form-message');
+            formMessage.textContent = "Thank you for your message! We'll get back to you soon.";
+            formMessage.classList.remove('hidden', 'error');
+            formMessage.classList.add('success');
+            
+            // Reset the form after submission
+            this.reset();
+            
+            // Hide the success message after 5 seconds
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 5000);
+        });
+        
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentNode;
+                faqItem.classList.toggle('active');
+                
+                // Update the icon
+                const icon = question.querySelector('.faq-icon i');
+                if (faqItem.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
