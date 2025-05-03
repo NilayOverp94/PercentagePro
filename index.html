@@ -1,19 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LNS9019JDN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LNS9019JDN');
-</script>
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Percentage Calculator Pro</title>
-    <link rel="icon" type="image/png" href="generated-icon.png">
     <meta name="description" content="A comprehensive percentage and tax calculator with multiple calculation modes, GST calculator, and more.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -28,6 +18,7 @@
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html" class="active">Calculators</a></li>
+                    <li><a href="commercial.html">Commercial</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -57,34 +48,25 @@
                 <h3>Basic Percentage Calculator</h3>
                 <div class="input-group">
                     <label for="percentage">Percentage (%)</label>
-                    <div class="input-with-tooltip">
+                    <div class="input-container">
                         <input type="text" id="percentage" placeholder="Enter percentage value">
-                        <div class="tooltip">
-                            <i class="fas fa-info-circle"></i>
-                            <span class="tooltip-text">Enter the percentage value (e.g., 25 for 25%)</span>
-                        </div>
+
                     </div>
                 </div>
                 
                 <div class="input-group">
                     <label for="baseNumber">Of Number</label>
-                    <div class="input-with-tooltip">
+                    <div class="input-container">
                         <input type="text" id="baseNumber" placeholder="Enter base number">
-                        <div class="tooltip">
-                            <i class="fas fa-info-circle"></i>
-                            <span class="tooltip-text">Enter the number you want to find the percentage of</span>
-                        </div>
+
                     </div>
                 </div>
                 
                 <div class="input-group">
                     <label for="result">Result</label>
-                    <div class="input-with-tooltip">
+                    <div class="input-container">
                         <input type="text" id="result" placeholder="Result will appear here" class="result-field">
-                        <div class="tooltip">
-                            <i class="fas fa-info-circle"></i>
-                            <span class="tooltip-text">The calculated result based on other inputs</span>
-                        </div>
+
                     </div>
                 </div>
                 
@@ -107,34 +89,25 @@
                 <h3>Find Percentage</h3>
                 <div class="input-group">
                     <label for="find-percentage-x">X (Value)</label>
-                    <div class="input-with-tooltip">
+                    <div class="input-container">
                         <input type="text" id="find-percentage-x" placeholder="Enter value X">
-                        <div class="tooltip">
-                            <i class="fas fa-info-circle"></i>
-                            <span class="tooltip-text">Enter the value you want to find the percentage of</span>
-                        </div>
+
                     </div>
                 </div>
                 
                 <div class="input-group">
                     <label for="find-percentage-y">Y (Result)</label>
-                    <div class="input-with-tooltip">
+                    <div class="input-container">
                         <input type="text" id="find-percentage-y" placeholder="Enter result value Y">
-                        <div class="tooltip">
-                            <i class="fas fa-info-circle"></i>
-                            <span class="tooltip-text">Enter the resulting value after applying the percentage</span>
-                        </div>
+
                     </div>
                 </div>
                 
                 <div class="input-group">
                     <label for="find-percentage-result">Percentage (%)</label>
-                    <div class="input-with-tooltip">
+                    <div class="input-container">
                         <input type="text" id="find-percentage-result" placeholder="Percentage will appear here" class="result-field">
-                        <div class="tooltip">
-                            <i class="fas fa-info-circle"></i>
-                            <span class="tooltip-text">The calculated percentage</span>
-                        </div>
+
                     </div>
                 </div>
                 
@@ -157,34 +130,25 @@
                 <h3>Percentage Change</h3>
                 <div class="input-group">
                     <label for="percentage-change-old">Original Value</label>
-                    <div class="input-with-tooltip">
+                    <div class="input-container">
                         <input type="text" id="percentage-change-old" placeholder="Enter original value">
-                        <div class="tooltip">
-                            <i class="fas fa-info-circle"></i>
-                            <span class="tooltip-text">Enter the original value before the change</span>
-                        </div>
+
                     </div>
                 </div>
                 
                 <div class="input-group">
                     <label for="percentage-change-new">New Value</label>
-                    <div class="input-with-tooltip">
+                    <div class="input-container">
                         <input type="text" id="percentage-change-new" placeholder="Enter new value">
-                        <div class="tooltip">
-                            <i class="fas fa-info-circle"></i>
-                            <span class="tooltip-text">Enter the new value after the change</span>
-                        </div>
+
                     </div>
                 </div>
                 
                 <div class="input-group">
                     <label for="percentage-change-result">Percentage Change (%)</label>
-                    <div class="input-with-tooltip">
+                    <div class="input-container">
                         <input type="text" id="percentage-change-result" placeholder="Percentage change will appear here" class="result-field">
-                        <div class="tooltip">
-                            <i class="fas fa-info-circle"></i>
-                            <span class="tooltip-text">The calculated percentage change</span>
-                        </div>
+
                     </div>
                 </div>
                 
@@ -207,34 +171,25 @@
             
             <div class="input-group">
                 <label for="cost-price">Cost Price (₹)</label>
-                <div class="input-with-tooltip">
+                <div class="input-container">
                     <input type="text" id="cost-price" placeholder="Enter cost price">
-                    <div class="tooltip">
-                        <i class="fas fa-info-circle"></i>
-                        <span class="tooltip-text">Enter the price at which you purchased the item</span>
-                    </div>
+
                 </div>
             </div>
             
             <div class="input-group">
                 <label for="selling-price">Selling Price (₹)</label>
-                <div class="input-with-tooltip">
+                <div class="input-container">
                     <input type="text" id="selling-price" placeholder="Enter selling price">
-                    <div class="tooltip">
-                        <i class="fas fa-info-circle"></i>
-                        <span class="tooltip-text">Enter the price at which you sold the item</span>
-                    </div>
+
                 </div>
             </div>
             
             <div class="input-group">
                 <label for="quantity">Quantity</label>
-                <div class="input-with-tooltip">
+                <div class="input-container">
                     <input type="text" id="quantity" placeholder="Enter quantity" value="1">
-                    <div class="tooltip">
-                        <i class="fas fa-info-circle"></i>
-                        <span class="tooltip-text">Enter the number of items (default: 1)</span>
-                    </div>
+
                 </div>
             </div>
             
@@ -273,18 +228,15 @@
             
             <div class="input-group">
                 <label for="gst-amount">Original Amount (₹)</label>
-                <div class="input-with-tooltip">
+                <div class="input-container">
                     <input type="text" id="gst-amount" placeholder="Enter amount">
-                    <div class="tooltip">
-                        <i class="fas fa-info-circle"></i>
-                        <span class="tooltip-text">Enter the original amount without GST</span>
-                    </div>
+
                 </div>
             </div>
             
             <div class="input-group">
                 <label for="gst-rate">GST Rate (%)</label>
-                <div class="input-with-tooltip">
+                <div class="input-container">
                     <select id="gst-rate">
                         <option value="5">5%</option>
                         <option value="12">12%</option>
@@ -292,21 +244,15 @@
                         <option value="28">28%</option>
                         <option value="custom">Custom</option>
                     </select>
-                    <div class="tooltip">
-                        <i class="fas fa-info-circle"></i>
-                        <span class="tooltip-text">Select the GST rate applicable</span>
-                    </div>
+
                 </div>
             </div>
             
             <div class="input-group hidden" id="custom-gst-rate-group">
                 <label for="custom-gst-rate">Custom GST Rate (%)</label>
-                <div class="input-with-tooltip">
+                <div class="input-container">
                     <input type="text" id="custom-gst-rate" placeholder="Enter custom GST rate">
-                    <div class="tooltip">
-                        <i class="fas fa-info-circle"></i>
-                        <span class="tooltip-text">Enter a custom GST rate percentage</span>
-                    </div>
+
                 </div>
             </div>
             
@@ -370,6 +316,7 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Calculators</a></li>
+                    <li><a href="commercial.html">Commercial</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="privacy.html">Privacy Policy</a></li>
@@ -382,6 +329,8 @@
                     <li><a href="#" data-tab="percentage-calculators" class="footer-tab-link">Percentage Calculators</a></li>
                     <li><a href="#" data-tab="gst-calculator" class="footer-tab-link">GST Calculator</a></li>
                     <li><a href="#" data-tab="profit-loss-calculator" class="footer-tab-link">Profit & Loss</a></li>
+                    <li><a href="commercial.html">Financial Calculators</a></li>
+                    <li><a href="commercial.html">Business Tools</a></li>
                 </ul>
             </div>
         </div>
