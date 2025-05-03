@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commercial Calculators - Percentage Calculator Pro</title>
+    <meta name="description" content="Advanced financial and business calculators for commerce students and professionals.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="light-mode">
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <h1><i class="fas fa-calculator"></i> Percentage Calculator Pro</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Calculators</a></li>
+                    <li><a href="commercial.html" class="active">Commercial</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h2 class="page-title">Commercial Calculators</h2>
+        
+        <!-- Calculator Tabs Navigation -->
+        <div class="calculator-tabs">
+            <button class="tab-button active" data-tab="financial-calculators">
+                <i class="fas fa-chart-line"></i> Financial Calculators
+            </button>
+            <button class="tab-button" data-tab="business-tools">
+                <i class="fas fa-briefcase"></i> Business Tools
+            </button>
+        </div>
+        
+        <!-- Financial Calculators Section -->
+        <div class="calculator-content active" id="financial-calculators">
+            <div class="calculator-section">
+                <h3><i class="fas fa-percentage"></i> Simple Interest Calculator</h3>
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="simple-principal">Principal Amount (₹)</label>
+                        <input type="number" id="simple-principal" placeholder="Enter principal amount">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="simple-rate">Rate of Interest (% per annum)</label>
+                        <input type="number" id="simple-rate" placeholder="Enter interest rate">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="simple-time">Time Period (years)</label>
+                        <input type="number" id="simple-time" placeholder="Enter time period">
+                    </div>
+                    
+                    <div class="result-container" id="simple-interest-results">
+                        <div class="result-row">
+                            <div class="result-label">Simple Interest:</div>
+                            <div class="result-value" id="simple-interest-amount">₹0.00</div>
+                        </div>
+                        <div class="result-row">
+                            <div class="result-label">Total Amount:</div>
+                            <div class="result-value" id="simple-interest-total">₹0.00</div>
+                        </div>
+                    </div>
+                    
+                    <div class="calculator-error" id="simple-interest-error"></div>
+                    
+                    <div class="calculator-summary" id="simple-interest-summary"></div>
+                    
+                    <div class="button-group">
+                        <button class="reset-btn" id="simple-interest-reset-btn">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                        <button class="copy-btn" id="simple-interest-copy-btn">
+                            <i class="fas fa-copy"></i> Copy Results
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="calculator-section">
+                <h3><i class="fas fa-chart-area"></i> Compound Interest Calculator</h3>
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="compound-principal">Principal Amount (₹)</label>
+                        <input type="number" id="compound-principal" placeholder="Enter principal amount">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="compound-rate">Rate of Interest (% per annum)</label>
+                        <input type="number" id="compound-rate" placeholder="Enter interest rate">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="compound-time">Time Period (years)</label>
+                        <input type="number" id="compound-time" placeholder="Enter time period">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="compound-frequency">Compounding Frequency</label>
+                        <select id="compound-frequency">
+                            <option value="1">Annually (1 time/year)</option>
+                            <option value="2">Semi-Annually (2 times/year)</option>
+                            <option value="4">Quarterly (4 times/year)</option>
+                            <option value="12">Monthly (12 times/year)</option>
+                            <option value="365">Daily (365 times/year)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="result-container" id="compound-interest-results">
+                        <div class="result-row">
+                            <div class="result-label">Compound Interest:</div>
+                            <div class="result-value" id="compound-interest-amount">₹0.00</div>
+                        </div>
+                        <div class="result-row">
+                            <div class="result-label">Total Amount:</div>
+                            <div class="result-value" id="compound-interest-total">₹0.00</div>
+                        </div>
+                    </div>
+                    
+                    <div class="calculator-error" id="compound-interest-error"></div>
+                    
+                    <div class="calculator-summary" id="compound-interest-summary"></div>
+                    
+                    <div class="button-group">
+                        <button class="reset-btn" id="compound-interest-reset-btn">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                        <button class="copy-btn" id="compound-interest-copy-btn">
+                            <i class="fas fa-copy"></i> Copy Results
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="calculator-section">
+                <h3><i class="fas fa-money-check-alt"></i> EMI Calculator</h3>
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="loan-amount">Loan Amount (₹)</label>
+                        <input type="number" id="loan-amount" placeholder="Enter loan amount">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loan-rate">Interest Rate (% per annum)</label>
+                        <input type="number" id="loan-rate" placeholder="Enter interest rate">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loan-tenure">Loan Tenure</label>
+                        <div class="input-with-select">
+                            <input type="number" id="loan-tenure" placeholder="Enter loan tenure">
+                            <select id="loan-tenure-type">
+                                <option value="year">Years</option>
+                                <option value="month">Months</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="result-container" id="emi-results">
+                        <div class="result-row">
+                            <div class="result-label">Monthly EMI:</div>
+                            <div class="result-value" id="monthly-emi">₹0.00</div>
+                        </div>
+                        <div class="result-row">
+                            <div class="result-label">Total Interest:</div>
+                            <div class="result-value" id="total-interest">₹0.00</div>
+                        </div>
+                        <div class="result-row">
+                            <div class="result-label">Total Payment:</div>
+                            <div class="result-value" id="total-payment">₹0.00</div>
+                        </div>
+                    </div>
+                    
+                    <div class="calculator-error" id="emi-error"></div>
+                    
+                    <div class="calculator-summary" id="emi-summary"></div>
+                    
+                    <div class="button-group">
+                        <button class="reset-btn" id="emi-reset-btn">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                        <button class="copy-btn" id="emi-copy-btn">
+                            <i class="fas fa-copy"></i> Copy Results
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="calculator-section">
+                <h3><i class="fas fa-exchange-alt"></i> Currency Converter</h3>
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="currency-amount">Amount</label>
+                        <input type="number" id="currency-amount" placeholder="Enter amount">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="from-currency">From</label>
+                        <select id="from-currency">
+                            <option value="INR">Indian Rupee (INR)</option>
+                            <option value="USD">US Dollar (USD)</option>
+                            <option value="EUR">Euro (EUR)</option>
+                            <option value="GBP">British Pound (GBP)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="to-currency">To</label>
+                        <select id="to-currency">
+                            <option value="USD">US Dollar (USD)</option>
+                            <option value="INR">Indian Rupee (INR)</option>
+                            <option value="EUR">Euro (EUR)</option>
+                            <option value="GBP">British Pound (GBP)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="result-container" id="currency-results">
+                        <div class="result-row">
+                            <div class="result-label">Converted Amount:</div>
+                            <div class="result-value" id="converted-amount">$0.00</div>
+                        </div>
+                        <div class="result-row">
+                            <div class="result-label">Exchange Rate:</div>
+                            <div class="result-value" id="exchange-rate">1 INR = 0.00 USD</div>
+                        </div>
+                    </div>
+                    
+                    <div class="calculator-note">
+                        <p>Note: This converter uses static exchange rates from May 1, 2025. Actual rates may vary.</p>
+                    </div>
+                    
+                    <div class="calculator-error" id="currency-error"></div>
+                    
+                    <div class="button-group">
+                        <button class="reset-btn" id="currency-reset-btn">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                        <button class="copy-btn" id="currency-copy-btn">
+                            <i class="fas fa-copy"></i> Copy Results
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Business Tools Section -->
+        <div class="calculator-content" id="business-tools">
+            <div class="calculator-section">
+                <h3><i class="fas fa-chart-pie"></i> Profit & Loss Calculator</h3>
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="cost-price-business">Cost Price (₹)</label>
+                        <input type="number" id="cost-price-business" placeholder="Enter cost price">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="selling-price-business">Selling Price (₹)</label>
+                        <input type="number" id="selling-price-business" placeholder="Enter selling price">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="marked-price">Marked Price (₹)</label>
+                        <input type="number" id="marked-price" placeholder="Enter marked price (optional)">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="discount-percentage">Discount (%)</label>
+                        <input type="number" id="discount-percentage" placeholder="Enter discount percentage (optional)">
+                    </div>
+                    
+                    <div class="dynamic-fields">
+                        <div class="form-group">
+                            <div class="checkbox-field">
+                                <input type="checkbox" id="show-quantity">
+                                <label for="show-quantity">Include Quantity</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group hidden" id="quantity-field">
+                            <label for="quantity-business">Quantity</label>
+                            <input type="number" id="quantity-business" value="1" min="1">
+                        </div>
+                    </div>
+                    
+                    <div class="result-container" id="pl-business-results">
+                        <div class="result-row">
+                            <div class="result-label">Result Type:</div>
+                            <div class="result-value" id="pl-result-type-business">Enter values to see results</div>
+                        </div>
+                        <div class="result-row">
+                            <div class="result-label">Amount:</div>
+                            <div class="result-value" id="pl-amount-business">₹0.00</div>
+                        </div>
+                        <div class="result-row">
+                            <div class="result-label">Percentage:</div>
+                            <div class="result-value" id="pl-percentage-business">0.00%</div>
+                        </div>
+                        <div class="result-row hidden" id="pl-total-row">
+                            <div class="result-label">Total Amount:</div>
+                            <div class="result-value" id="pl-total-amount-business">₹0.00</div>
+                        </div>
+                        <div class="result-row" id="discount-row">
+                            <div class="result-label">Discount Amount:</div>
+                            <div class="result-value" id="discount-amount">₹0.00</div>
+                        </div>
+                    </div>
+                    
+                    <div class="calculator-error" id="pl-business-error"></div>
+                    
+                    <div class="calculator-summary" id="pl-business-summary"></div>
+                    
+                    <div class="button-group">
+                        <button class="reset-btn" id="pl-business-reset-btn">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                        <button class="copy-btn" id="pl-business-copy-btn">
+                            <i class="fas fa-copy"></i> Copy Results
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="calculator-section">
+                <h3><i class="fas fa-balance-scale"></i> Break-even Point Calculator</h3>
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="fixed-cost">Fixed Cost (₹)</label>
+                        <input type="number" id="fixed-cost" placeholder="Enter total fixed cost">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="variable-cost">Variable Cost per Unit (₹)</label>
+                        <input type="number" id="variable-cost" placeholder="Enter variable cost per unit">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="selling-price-unit">Selling Price per Unit (₹)</label>
+                        <input type="number" id="selling-price-unit" placeholder="Enter selling price per unit">
+                    </div>
+                    
+                    <div class="result-container" id="breakeven-results">
+                        <div class="result-row">
+                            <div class="result-label">Break-even Point (Units):</div>
+                            <div class="result-value" id="breakeven-units">0 units</div>
+                        </div>
+                        <div class="result-row">
+                            <div class="result-label">Break-even Point (Revenue):</div>
+                            <div class="result-value" id="breakeven-revenue">₹0.00</div>
+                        </div>
+                        <div class="result-row">
+                            <div class="result-label">Contribution Margin per Unit:</div>
+                            <div class="result-value" id="contribution-margin">₹0.00</div>
+                        </div>
+                        <div class="result-row">
+                            <div class="result-label">Contribution Margin Ratio:</div>
+                            <div class="result-value" id="contribution-ratio">0.00%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="calculator-error" id="breakeven-error"></div>
+                    
+                    <div class="calculator-summary" id="breakeven-summary"></div>
+                    
+                    <div class="button-group">
+                        <button class="reset-btn" id="breakeven-reset-btn">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                        <button class="copy-btn" id="breakeven-copy-btn">
+                            <i class="fas fa-copy"></i> Copy Results
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="calculator-section">
+                <h3><i class="fas fa-percent"></i> Percentage Change Calculator</h3>
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="old-value-business">Original Value</label>
+                        <input type="number" id="old-value-business" placeholder="Enter original value">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="new-value-business">New Value</label>
+                        <input type="number" id="new-value-business" placeholder="Enter new value">
+                    </div>
+                    
+                    <div class="result-container" id="percentage-change-business-results">
+                        <div class="result-row">
+                            <div class="result-label">Percentage Change:</div>
+                            <div class="result-value" id="percentage-change-result-business">0.00%</div>
+                        </div>
+                        <div class="result-row">
+                            <div class="result-label">Change Amount:</div>
+                            <div class="result-value" id="absolute-change">0.00</div>
+                        </div>
+                    </div>
+                    
+                    <div class="calculator-error" id="percentage-change-business-error"></div>
+                    
+                    <div class="calculator-summary" id="percentage-change-business-summary"></div>
+                    
+                    <div class="button-group">
+                        <button class="reset-btn" id="percentage-change-business-reset-btn">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                        <button class="copy-btn" id="percentage-change-business-copy-btn">
+                            <i class="fas fa-copy"></i> Copy Results
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Percentage Calculator Pro</h3>
+                <p>A comprehensive calculator tool with multiple calculation modes for percentages, finance, and business. Free, fast, and easy to use.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Calculators</a></li>
+                    <li><a href="commercial.html">Commercial</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Calculator Tools</h3>
+                <ul>
+                    <li><a href="index.html">Percentage Calculators</a></li>
+                    <li><a href="index.html">GST Calculator</a></li>
+                    <li><a href="commercial.html">Financial Calculators</a></li>
+                    <li><a href="commercial.html">Business Tools</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Percentage Calculator Pro by Nilay Raj. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script src="commercial.js"></script>
+</body>
+</html>
